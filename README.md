@@ -16,11 +16,11 @@ The Minimum Viable Product must be completed in three hours.
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Team Lead_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
-- [ ] Implement the project on this Branch, committing changes regularly.
+- [X] Create a forked copy of this project.
+- [X] Add your _Team Lead_ as collaborator on Github.
+- [X] Clone your forked version of the Repository.
+- [X] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
+- [X] Implement the project on this Branch, committing changes regularly.
 - [ ] Push commits: git push origin `firstName-lastName`.
 
 Follow these steps for completing your project.
@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
+The purpose is the ability to maintain state information between page requests until a user logs out.
+
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+
+bcrypt hashes a password and adds a salt so that you are not storing a plain text password. 
 
 - [ ] What does bcrypt do to slow down attackers?
 
+bcrypt hashes a password and adds a salt and you can determine the hash passes.
+
 - [ ] What are the three parts of the JSON Web Token?
+
+The three parts are the header, the payload and the signature.
 
 ## Minimum Viable Product
 
