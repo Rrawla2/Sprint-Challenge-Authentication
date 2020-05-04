@@ -16,7 +16,7 @@ server.use('/api/auth', authRouter);
 server.use('/api/jokes', authenticate, jokesRouter);
 
 server.get("/", (req, res) => {
-    res.json({ message: "Server is UP!"})
+    res.json({ message: "Server is UP!" })
 })
 
 module.exports = server;

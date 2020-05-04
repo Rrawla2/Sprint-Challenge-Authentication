@@ -7,6 +7,12 @@ describe("GET /", () => {
         const res = await request(server)
             .get("/")
             expect(res.status).toBe(200) 
-            expect(res.body.message).toBe("Server is UP!")  
+              
+    })
+
+    it("should return a JSON object", async () => {
+        const res = await request(server)
+        .get("/")
+        expect(res.body).toEqual({ message: "Server is UP!" })
     })
 })
