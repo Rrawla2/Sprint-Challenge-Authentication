@@ -27,6 +27,20 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
   // implement login
+    const { username, password } = req.body
+      User.findBy({ username })
+        .first()
+        .then(user => {
+          if (user && bcrypt.compareSync(password, user.password)) {
+            const token = generateToken(user)
+            res.status(200).json({ username, token })
+          } else {
+              res.status(401).json({ message: "Invalid login" })
+    }
+        })
+        .catch(err => {
+            res.status(500).json({ message: "Error in login", err })
+        })
 });
 
 module.exports = router;
