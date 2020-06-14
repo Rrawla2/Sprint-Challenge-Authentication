@@ -22,9 +22,10 @@ describe("Add a user", () => {
             expect(res.body.token).toBeTruthy()
 
             const token = res.body.token
+            console.log(token)
             const jokes = await request(auth)
             .get("/api/jokes")
-            //.set({ "Authorization": token})
+            .set({ "Authorization": token})
             expect(jokes.status).toBe(200)
         })
     })

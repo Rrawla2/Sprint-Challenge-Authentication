@@ -12,7 +12,7 @@ router.post('/register', (req, res) => {
   // implement registration
   const user = req.body
   user.password = bcrypt.hashSync(user.password, 8)
-
+  console.log("User", user)
   User.add(user)
     .then(newUser => {
       user.id = newUser[0]
@@ -33,7 +33,7 @@ router.post('/login', (req, res) => {
         .then(user => {
           if (user && bcrypt.compareSync(password, user.password)) {
             const token = generateToken(user)
-            res.status(200).json({ username, token })
+            res.status(200).json({ message: `Welcome ${username}!`, token })
           } else {
               res.status(401).json({ message: "Invalid login" })
     }
